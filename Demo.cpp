@@ -79,13 +79,22 @@ void Demo::Render() {
 	DrawWoods(0, 0.5, 0, 4, 0.5, 2);
 	DrawWoods(2, 1, 0, 0.25, 3, 2);
 	DrawWoods(-2, 1, 0, 0.25, 3, 2);
+
+	// Kursi
+	DrawWoods(-3, 0.5, 2, 0.25, 3, 2);
+	DrawWoods(-3.75, 0.5, 2, 1.5, 0.25, 2);
+	DrawWoods(-4.5, 0, 2, 0.25, 1.25, 2);
+
+	// Meja
+	DrawWoods(4, 0.5, 0, 2, 2, 0.5);
+	DrawWoods(4, 1.5, 1.5, 2, 0.25, 3.5);
+	DrawWoods(4, 0.5, 3, 2, 2, 0.5);
+
 	DrawBlanket();
 	DrawPillow();
 
-	// Kursi
-	//DrawFoundation(3, 0.5, 0, 0.25, 2, 2);
-	//DrawFoundation(3.75, 0.5, 0, 1.5, 0.25, 2);
-	//DrawFoundation(4.5, 0.5, 0, 0.25, 2, 2);
+	
+	
 
 	glDisable(GL_DEPTH_TEST);
 }
@@ -221,7 +230,7 @@ void Demo::BuildColoredPlane()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	int width, height;
-	unsigned char* image = SOIL_load_image("floor.jpg", &width, &height, 0, SOIL_LOAD_RGBA);
+	unsigned char* image = SOIL_load_image("marble.png", &width, &height, 0, SOIL_LOAD_RGBA);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	glGenerateMipmap(GL_TEXTURE_2D);
 	SOIL_free_image_data(image);
